@@ -83,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export const SignIn = (props: Props) => {
+export const SignIn: React.FC<Props> = (props: Props): React.ReactElement => {
     const classes = useStyles()
     const [visibleModal, setVisibleModal] = React.useState<'register' | 'signIn'>();
 
