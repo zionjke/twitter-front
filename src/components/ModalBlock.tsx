@@ -7,7 +7,7 @@ import {
 import CloseIcon from "@material-ui/icons/Close";
 
 type Props = {
-    title: string
+    title?: string
     children: React.ReactNode
     visible:boolean
     onClose: () => void
