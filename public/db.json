@@ -1,65 +1,108 @@
-[
-  {
-    "_id": "60770e487dcb68919973e39f",
-    "text": "Do enim aliqua cupidatat consectetur dolore ex tempor aliqua nulla eu veniam. Est aute cillum consequat ea laboris elit. Laborum et elit aliqua est ullamco. Est velit excepteur occaecat consectetur culpa aliqua sunt eu veniam duis nisi consequat fugiat. Lorem mollit labore excepteur sit dolore nostrud deserunt labore.",
-    "user": {
+{
+  "tweets": [
+    {
+      "_id": "60770e487dcb68919973e39f",
+      "text": "Do enim aliqua cupidatat consectetur dolore ex tempor aliqua nulla eu veniam. Est aute cillum consequat ea laboris elit. Laborum et elit aliqua est ullamco. Est velit excepteur occaecat consectetur culpa aliqua sunt eu veniam duis nisi consequat fugiat. Lorem mollit labore excepteur sit dolore nostrud deserunt labore.",
+      "user": {
+        "fullname": "Candy",
+        "userName": "snider",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?1"
+      }
+    },
+    {
+      "_id": "60770e4857288497178d246c",
+      "text": "Quis incididunt veniam ullamco occaecat excepteur esse commodo enim veniam magna consectetur elit. Cillum amet deserunt ex incididunt commodo tempor aliqua sit aute amet reprehenderit eu. Lorem aliquip in qui cillum sint sit. Sint irure mollit incididunt ad nisi mollit consectetur in enim velit labore ex. Magna qui qui ex ad sit irure culpa.",
+      "user": {
+        "fullname": "Marian",
+        "userName": "parker",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?2"
+      }
+    },
+    {
+      "_id": "60770e48818b247373366b99",
+      "text": "Mollit excepteur qui proident non duis amet. Excepteur in occaecat culpa eu cupidatat aliquip aliquip irure ut sit. Proident sint dolore aute ea ex do aliquip sint sint qui voluptate laboris. Irure magna irure eu aliqua culpa laborum aliquip. Magna in ex veniam adipisicing qui nulla nisi do amet velit.",
+      "user": {
+        "fullname": "Celina",
+        "userName": "pollard",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?3"
+      }
+    },
+    {
+      "_id": "60770e4862cf3e884fe7a556",
+      "text": "Deserunt est non velit incididunt in minim ullamco consequat reprehenderit fugiat aliqua non eiusmod anim. Ut pariatur culpa duis aliquip velit veniam consectetur qui aliqua dolor. Aliqua laboris exercitation Lorem fugiat officia eiusmod nisi do incididunt tempor consectetur cupidatat. Ad aute labore amet culpa amet quis Lorem eu commodo excepteur. Eu minim est enim labore ad aliquip nisi magna labore duis quis do.",
+      "user": {
+        "fullname": "Francis",
+        "userName": "merrill",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?4"
+      }
+    },
+    {
+      "_id": "60770e485a970d723471e49c",
+      "text": "Culpa ut cupidatat velit voluptate non qui et eiusmod cillum. Est cillum enim et non amet ea. Est mollit reprehenderit labore occaecat tempor anim. Labore veniam do do ea elit. Nisi consectetur dolor consequat qui aute sint.",
+      "user": {
+        "fullname": "Cooley",
+        "userName": "small",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+      }
+    },
+    {
+      "_id": "60770e48a23809741633ab46",
+      "text": "Et sit deserunt duis duis minim culpa cillum aliquip. Do eu do laborum nostrud in excepteur labore enim sint deserunt amet deserunt nostrud cillum. Velit sunt occaecat incididunt duis officia est voluptate. Cillum proident laboris voluptate occaecat. Ipsum id cillum aute eiusmod.",
+      "user": {
+        "fullname": "Ivy",
+        "userName": "walsh",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?6"
+      }
+    },
+    {
+      "_id": "60770e48f827e8e6bf72803c",
+      "text": "Culpa nisi id ea labore aliqua elit est aliqua nulla commodo culpa sint. Ad commodo ex irure sit labore eu anim ullamco. Deserunt commodo sit minim Lorem. Culpa velit incididunt ipsum do veniam deserunt ullamco reprehenderit esse velit. Ad qui exercitation et non elit est excepteur ut laborum.",
+      "user": {
+        "fullname": "Greta",
+        "userName": "zimmerman",
+        "avatarUrl": "https://source.unsplash.com/random/100x100?7"
+      }
+    }
+  ],
+  "tags": [
+    {
+      "_id": "60770e485a970d638471e49c",
+      "name": "#UkraineHistory",
+      "count": 1654
+    },
+    {
+      "_id": "60770e486a970d638471e49c",
+      "name": "#Zelenskiy",
+      "count": 134
+    },
+    {
+      "_id": "60770e487a970d638471e49c",
+      "name": "#Covid19",
+      "count": 782
+    }
+  ],
+  "users": [
+    {
       "fullname": "Candy",
       "userName": "snider",
-      "avatarUrl": "http://placehold.it/32x32"
-    }
-  },
-  {
-    "_id": "60770e4857288497178d246c",
-    "text": "Quis incididunt veniam ullamco occaecat excepteur esse commodo enim veniam magna consectetur elit. Cillum amet deserunt ex incididunt commodo tempor aliqua sit aute amet reprehenderit eu. Lorem aliquip in qui cillum sint sit. Sint irure mollit incididunt ad nisi mollit consectetur in enim velit labore ex. Magna qui qui ex ad sit irure culpa.",
-    "user": {
-      "fullname": "Marian",
-      "userName": "parker",
-      "avatarUrl": "http://placehold.it/32x32"
-    }
-  },
-  {
-    "_id": "60770e48818b247373366b99",
-    "text": "Mollit excepteur qui proident non duis amet. Excepteur in occaecat culpa eu cupidatat aliquip aliquip irure ut sit. Proident sint dolore aute ea ex do aliquip sint sint qui voluptate laboris. Irure magna irure eu aliqua culpa laborum aliquip. Magna in ex veniam adipisicing qui nulla nisi do amet velit.",
-    "user": {
-      "fullname": "Celina",
-      "userName": "pollard",
-      "avatarUrl": "http://placehold.it/32x32"
-    }
-  },
-  {
-    "_id": "60770e4862cf3e884fe7a556",
-    "text": "Deserunt est non velit incididunt in minim ullamco consequat reprehenderit fugiat aliqua non eiusmod anim. Ut pariatur culpa duis aliquip velit veniam consectetur qui aliqua dolor. Aliqua laboris exercitation Lorem fugiat officia eiusmod nisi do incididunt tempor consectetur cupidatat. Ad aute labore amet culpa amet quis Lorem eu commodo excepteur. Eu minim est enim labore ad aliquip nisi magna labore duis quis do.",
-    "user": {
-      "fullname": "Francis",
-      "userName": "merrill",
-      "avatarUrl": "http://placehold.it/32x32"
-    }
-  },
-  {
-    "_id": "60770e485a970d723471e49c",
-    "text": "Culpa ut cupidatat velit voluptate non qui et eiusmod cillum. Est cillum enim et non amet ea. Est mollit reprehenderit labore occaecat tempor anim. Labore veniam do do ea elit. Nisi consectetur dolor consequat qui aute sint.",
-    "user": {
-      "fullname": "Cooley",
-      "userName": "small",
-      "avatarUrl": "http://placehold.it/32x32"
-    }
-  },
-  {
-    "_id": "60770e48a23809741633ab46",
-    "text": "Et sit deserunt duis duis minim culpa cillum aliquip. Do eu do laborum nostrud in excepteur labore enim sint deserunt amet deserunt nostrud cillum. Velit sunt occaecat incididunt duis officia est voluptate. Cillum proident laboris voluptate occaecat. Ipsum id cillum aute eiusmod.",
-    "user": {
-      "fullname": "Ivy",
-      "userName": "walsh",
-      "avatarUrl": "http://placehold.it/32x32"
-    }
-  },
-  {
-    "_id": "60770e48f827e8e6bf72803c",
-    "text": "Culpa nisi id ea labore aliqua elit est aliqua nulla commodo culpa sint. Ad commodo ex irure sit labore eu anim ullamco. Deserunt commodo sit minim Lorem. Culpa velit incididunt ipsum do veniam deserunt ullamco reprehenderit esse velit. Ad qui exercitation et non elit est excepteur ut laborum.",
-    "user": {
+      "avatarUrl": "https://source.unsplash.com/random/100x100?1"
+    },
+    {
       "fullname": "Greta",
       "userName": "zimmerman",
-      "avatarUrl": "http://placehold.it/32x32"
+      "avatarUrl": "https://source.unsplash.com/random/100x100?7"
+    },
+    {
+      "fullname": "Francis",
+      "userName": "merrill",
+      "avatarUrl": "https://source.unsplash.com/random/100x100?4"
     }
+  ],
+  "user": {
+    "_id": "60770e485a970d638471e49c",
+    "fullname": "Artem Vasiliev",
+    "userName": "zionjke",
+    "avatarUrl": "https://scontent.fiev6-1.fna.fbcdn.net/v/t1.18169-9/19598681_1574642752605734_2353472045273651560_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=arwZtMzU_t4AX-mHexo&_nc_ht=scontent.fiev6-1.fna&oh=993fd67e3ee3256a3b2c2bac22567424&oe=609A7A03"
   }
-]
+}
+

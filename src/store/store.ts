@@ -3,6 +3,8 @@ import createSagaMiddleware from 'redux-saga';
 import {rootReducer} from "./rootReducer";
 import rootSaga from "./saga";
 import {TweetsStateType} from "./ducks/tweets/types";
+import {TagsStateType} from "./ducks/tags/types";
+import {TweetDataStateType} from "./ducks/tweet/types";
 
 declare global {
     interface Window {
@@ -16,6 +18,8 @@ const sagaMiddleware = createSagaMiddleware()
 
 export type RootStateType = {
     tweets: TweetsStateType
+    tags: TagsStateType,
+    tweet:TweetDataStateType
 }
 
 export const store = createStore(rootReducer,composeEnhancers(applyMiddleware(sagaMiddleware)))
