@@ -4,8 +4,13 @@ import {fetchTweetData, setTweetData} from "../store/ducks/tweet/actionCreators"
 import {useDispatch, useSelector} from "react-redux";
 import {selectIsTweetDataLoading, selectTweetData} from '../store/ducks/tweet/selectors';
 import {useHomeStyles} from "../pages/Home/theme";
-import {Tweet} from "./Tweet";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import {Avatar, Badge, IconButton, Paper, Typography} from "@material-ui/core";
+import classNames from "classnames";
+import CommentIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
+import RepostIcon from "@material-ui/icons/RepeatOutlined";
+import LikeIcon from "@material-ui/icons/FavoriteBorderOutlined";
+import ShareIcon from "@material-ui/icons/ReplyOutlined";
 
 
 type Props = {};
@@ -36,8 +41,28 @@ export const FullTweet: React.FC<Props> = ({}: Props): React.ReactElement | null
     }
 
     if (tweetData) {
+        const {user, text} = tweetData
         return (
-            <Tweet classes={classes} id={id} {...tweetData}/>
+            <Paper className={classes.fullTweet}>
+                <div className={classNames(classes.tweetsHeaderUser)}>
+                    <Avatar
+                        className={classes.tweetAvatar}
+                        alt={`Аватарка пользователя ${user.fullname}`}
+                        src={user.avatarUrl}
+                    />
+                    <Typography>
+                        <b>{user.fullname}</b>&nbsp;
+                        <div>
+                            <span className={classes.tweetUserName}>@{user.userName}</span>&nbsp;
+                            <span className={classes.tweetUserName}>·</span>&nbsp;
+                            <span className={classes.tweetUserName}>1 ч</span>
+                        </div>
+                    </Typography>
+                </div>
+                <Typography className={classes.fullTweetText} gutterBottom>
+                    {text}
+                </Typography>
+            </Paper>
         )
     }
 

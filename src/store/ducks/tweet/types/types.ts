@@ -1,4 +1,4 @@
-import { TweetType } from "../tweets/types";
+import { TweetType } from "../../tweets/types/types";
 
 export enum LoadingState {
     LOADED = 'LOADED',

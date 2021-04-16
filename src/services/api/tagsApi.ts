@@ -1,5 +1,5 @@
 import axios from "axios";
-import {TagType} from "../../store/ducks/tags/types";
+import {TagType} from "../../store/ducks/tags/types/types";
 
 
 export const tagsApi = {

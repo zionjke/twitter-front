@@ -1,5 +1,5 @@
 import {RootStateType} from "../../store";
-import {LoadingState, TweetDataStateType, } from "./types";
+import {LoadingState, TweetDataStateType, } from "./types/types";
 
 
 

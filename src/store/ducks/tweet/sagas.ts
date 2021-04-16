@@ -1,13 +1,12 @@
 import {call, put, takeEvery} from "redux-saga/effects";
-import {TweetType} from "../tweets/types";
+import {TweetType} from "../tweets/types/types";
 import {
-    FetchTweetDataActionInterface,
     setTweetData,
     setTweetDataLoadingState,
-    TweetDataActionsType
 } from "./actionCreators";
-import {LoadingState} from "./types";
+import {LoadingState} from "./types/types";
 import {tweetsApi} from "../../../services/api/tweetsApi";
+import {FetchTweetDataActionInterface, TweetDataActionsType} from "./types/actionTypes";
 
 
 export function* fetchTweetDataRequest({payload: tweetId}: FetchTweetDataActionInterface) {

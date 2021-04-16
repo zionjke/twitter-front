@@ -1,6 +1,6 @@
 import produce, {Draft} from "immer";
-import {TagsActions, TagsActionsType} from "./actionCreators";
-import {LoadingState, TagsStateType} from "./types";
+import {LoadingState, TagsStateType} from "./types/types";
+import {TagsActions, TagsActionsType} from "./types/actionTypes";
 
 
 export const initialTagsState: TagsStateType = {

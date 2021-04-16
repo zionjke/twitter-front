@@ -1,6 +1,7 @@
-import {LoadingState, TweetDataStateType, } from "./types";
+import {LoadingState, TweetDataStateType, } from "./types/types";
 import produce, {Draft} from "immer";
-import {TweetDataActions, TweetDataActionsType} from "./actionCreators";
+import {TweetDataActions, TweetDataActionsType} from "./types/actionTypes";
+
 
 
 export const initialTweetDataState: TweetDataStateType = {

@@ -1,5 +1,5 @@
 import {RootStateType} from "../../store";
-import {LoadingState, TagsStateType,} from "./types";
+import {LoadingState, TagsStateType,} from "./types/types";
 
 
 export const tagsState = (state: RootStateType): TagsStateType => state.tags

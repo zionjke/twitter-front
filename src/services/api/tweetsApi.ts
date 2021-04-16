@@ -1,5 +1,5 @@
 import axios from "axios";
-import {TweetType} from "../../store/ducks/tweets/types";
+import {TweetType} from "../../store/ducks/tweets/types/types";
 
 
 export const tweetsApi = {

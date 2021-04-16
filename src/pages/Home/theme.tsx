@@ -69,7 +69,8 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
     },
     tweetsHeader: {
         display: 'flex',
-        alignItems:'center',
+        alignItems: 'center',
+        flex: 1,
         borderTop: '0',
         borderLeft: '0',
         borderRight: '0',
@@ -79,19 +80,26 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
             fontWeight: 800,
         },
     },
+    tweetsHeaderUser: {
+        display: 'flex',
+        alignItems: 'center',
+    },
     tweetsHeaderBackButton: {
-        marginRight:30
+        marginRight: 20,
     },
     tweet: {
         display: 'flex',
-        alignItems: 'flex-start',
         cursor: 'pointer',
+        alignItems: 'flex-start',
         paddingTop: 15,
         paddingLeft: 20,
         '&:hover': {
             backgroundColor: 'rgb(245, 248, 250)',
         },
-
+    },
+    tweetWrapper: {
+        color: 'inherit',
+        textDecoration: 'none',
     },
     tweetAvatar: {
         width: theme.spacing(6.5),
@@ -103,14 +111,19 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
         position: 'relative',
         left: -13,
         justifyContent: 'space-between',
-        width: 400,
+        maxWidth: 450,
     },
     tweetUserName: {
         color: grey[500],
     },
-    tweetWrapper: {
-        color: 'inherit',
-        textDecoration: 'none'
+    fullTweet: {
+        padding: 22,
+    },
+    fullTweetText: {
+        fontSize: 24,
+        marginTop: 20,
+        lineHeight: 1.3125,
+        wordBreak: 'break-word',
     },
     rightSide: {
         paddingTop: 20,
@@ -152,8 +165,8 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
         },
         '& a': {
             color: 'inherit',
-            textDecoration: 'none'
-        }
+            textDecoration: 'none',
+        },
     },
     addForm: {
         padding: 20,

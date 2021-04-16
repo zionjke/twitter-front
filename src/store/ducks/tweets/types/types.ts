@@ -5,6 +5,12 @@ export enum LoadingState {
     LOADING = 'LOADING'
 }
 
+export enum AddFormState {
+    ERROR = 'ERROR',
+    NEVER = 'NEVER',
+    LOADING = 'LOADING'
+}
+
 
 export type TweetType = {
     _id:string
@@ -20,6 +26,7 @@ export type UserType = {
 
 export type TweetsStateType = {
     items: Array<TweetType>
-    loadingState: LoadingState
+    loadingState: LoadingState,
+    addFormState: AddFormState
 }
 

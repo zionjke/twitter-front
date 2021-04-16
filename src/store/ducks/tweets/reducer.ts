@@ -1,10 +1,12 @@
 import produce, {Draft} from "immer";
-import {LoadingState, TweetsStateType} from "./types";
-import {TweetsActions, TweetsActionsType} from "./actionCreators";
+import {AddFormState, LoadingState, TweetsStateType} from "./types/types";
+import {TweetsActions, TweetsActionsType} from "./types/actionTypes";
+
 
 export const initialTweetsState: TweetsStateType = {
     items: [],
-    loadingState: LoadingState.NEVER
+    loadingState: LoadingState.NEVER,
+    addFormState: AddFormState.NEVER
 }
 
 export const tweetsReducer = produce((draft: Draft<TweetsStateType>, action: TweetsActions) => {
@@ -17,11 +19,19 @@ export const tweetsReducer = produce((draft: Draft<TweetsStateType>, action: Twe
             draft.items = action.payload;
             draft.loadingState = LoadingState.LOADED
             break;
-        case TweetsActionsType.SET_LOADING_STATE:
-            draft.loadingState = action.payload
+        case TweetsActionsType.FETCH_ADD_TWEET:
+            draft.addFormState = AddFormState.LOADING
             break;
         case TweetsActionsType.ADD_TWEET:
-            draft.items.push(action.payload)
+            draft.items = [action.payload, ...draft.items]
+            // TODO: Подумать какой статус выбрать если твит был добавлен
+            draft.addFormState = AddFormState.NEVER
+            break;
+        case TweetsActionsType.SET_ADD_FORM_STATE:
+            draft.addFormState = action.payload
+            break;
+        case TweetsActionsType.SET_LOADING_STATE:
+            draft.loadingState = action.payload
             break;
     }
 
