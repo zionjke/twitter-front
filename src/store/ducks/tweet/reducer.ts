@@ -21,6 +21,7 @@ export const tweetDataReducer = produce((draft: Draft<TweetDataStateType>, actio
         case TweetDataActionsType.SET_LOADING_STATE:
             draft.loadingState = action.payload;
             break;
+
     }
 
 }, initialTweetDataState)
