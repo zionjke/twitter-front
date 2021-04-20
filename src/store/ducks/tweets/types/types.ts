@@ -16,11 +16,13 @@ export type TweetType = {
     _id:string
     text: string
     user: UserType
+    createdAt: string,
+    updatedAt: string
 }
 
 export type UserType = {
     fullname: string
-    userName: string
+    username: string
     avatarUrl: string
 }
 

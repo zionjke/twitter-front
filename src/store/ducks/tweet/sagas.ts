@@ -11,8 +11,8 @@ import {FetchTweetDataActionInterface, TweetDataActionsType} from "./types/actio
 
 export function* fetchTweetDataRequest({payload: tweetId}: FetchTweetDataActionInterface) {
     try {
-        const data: TweetType[] = yield call(tweetsApi.fetchTweetData, tweetId)
-        yield put(setTweetData(data[0]))
+        const data: TweetType = yield call(tweetsApi.fetchTweetData, tweetId)
+        yield put(setTweetData(data))
     } catch {
         yield put(setTweetDataLoadingState(LoadingState.ERROR))
     }

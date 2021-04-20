@@ -7,7 +7,6 @@ import {
 } from "./actionCreators";
 import {tweetsApi} from "../../../services/api/tweetsApi";
 import {AddFormState, LoadingState, TweetType} from "./types/types";
-import { v1 } from 'uuid';
 import {FetchAddTweetActionInterface, TweetsActionsType} from "./types/actionTypes";
 
 export function* fetchTweetsRequest() {
@@ -21,16 +20,7 @@ export function* fetchTweetsRequest() {
 
 export function* fetchAddTweetRequest({payload:text}:FetchAddTweetActionInterface) {
     try {
-        const newTweet:TweetType = {
-            _id: v1(),
-            text: text,
-            user: {
-                fullname: "Test name",
-                userName: "Test username",
-                avatarUrl: "https://source.unsplash.com/random/100x100?1"
-            }
-        }
-        const data:TweetType = yield call(tweetsApi.addTweet,newTweet)
+        const data:TweetType = yield call(tweetsApi.addTweet,text)
         yield put(addTweet(data))
     } catch  {
         yield put(setAddFormState(AddFormState.ERROR))

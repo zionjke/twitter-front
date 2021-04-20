@@ -5,12 +5,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {selectIsTweetDataLoading, selectTweetData} from '../store/ducks/tweet/selectors';
 import {useHomeStyles} from "../pages/Home/theme";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import {Avatar, Badge, IconButton, Paper, Typography} from "@material-ui/core";
+import {Avatar, Paper, Typography} from "@material-ui/core";
 import classNames from "classnames";
-import CommentIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
-import RepostIcon from "@material-ui/icons/RepeatOutlined";
-import LikeIcon from "@material-ui/icons/FavoriteBorderOutlined";
-import ShareIcon from "@material-ui/icons/ReplyOutlined";
+import {format} from "date-fns";
+import ruLang from "date-fns/locale/ru";
 
 
 type Props = {};
@@ -41,7 +39,7 @@ export const FullTweet: React.FC<Props> = ({}: Props): React.ReactElement | null
     }
 
     if (tweetData) {
-        const {user, text} = tweetData
+        const {user, text, createdAt} = tweetData
         return (
             <Paper className={classes.fullTweet}>
                 <div className={classNames(classes.tweetsHeaderUser)}>
@@ -53,15 +51,22 @@ export const FullTweet: React.FC<Props> = ({}: Props): React.ReactElement | null
                     <Typography>
                         <b>{user.fullname}</b>&nbsp;
                         <div>
-                            <span className={classes.tweetUserName}>@{user.userName}</span>&nbsp;
-                            <span className={classes.tweetUserName}>·</span>&nbsp;
-                            <span className={classes.tweetUserName}>1 ч</span>
+                            <span className={classes.tweetUserName}>@{tweetData.user.username}</span>&nbsp;
                         </div>
                     </Typography>
                 </div>
                 <Typography className={classes.fullTweetText} gutterBottom>
                     {text}
                 </Typography>
+                <Typography>
+            <span className={classes.tweetUserName}>
+              {format(new Date(tweetData.createdAt), 'H:mm', {locale: ruLang})} ·{' '}
+            </span>
+                    <span className={classes.tweetUserName}>
+              {format(new Date(tweetData.createdAt), 'dd MMM. yyyy г.', {locale: ruLang})}
+            </span>
+                </Typography>
+
             </Paper>
         )
     }

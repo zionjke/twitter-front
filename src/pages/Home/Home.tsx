@@ -30,8 +30,6 @@ import {BackButton} from "../../components/BackButton";
 import {FullTweet} from "../../components/FullTweet";
 
 
-
-
 type Props = {};
 export const Home: React.FC<Props> = ({}: Props): React.ReactElement => {
     const dispatch = useDispatch()
@@ -53,7 +51,7 @@ export const Home: React.FC<Props> = ({}: Props): React.ReactElement => {
                     <Paper className={classes.tweetsWrapper} variant={"outlined"}>
                         <Paper className={classes.tweetsHeader} variant={"outlined"}>
 
-                            <Route  path={'/home/:any'}>
+                            <Route path={'/home/:any'}>
                                 <BackButton classes={classes}/>
                             </Route>
 
@@ -61,7 +59,7 @@ export const Home: React.FC<Props> = ({}: Props): React.ReactElement => {
                                 <Typography variant="h6">Твиты</Typography>
                             </Route>
 
-                            <Route  path={'/home/tweet/'}>
+                            <Route path={'/home/tweet/'}>
                                 <Typography variant={"h6"}>Твитнуть</Typography>
                             </Route>
 
@@ -76,18 +74,14 @@ export const Home: React.FC<Props> = ({}: Props): React.ReactElement => {
                             </Paper>
                         </Route>
 
-                        <Route  path='/home' exact>
+                        <Route path='/home' exact>
                             {
                                 isTweetsLoading
                                     ? <div className={classes.tweetsCentred}>
                                         <CircularProgress/>
                                     </div>
                                     : tweets.map(tweet => (
-                                        <Tweet key={tweet._id}
-                                               id={tweet._id}
-                                               text={tweet.text}
-                                               classes={classes}
-                                               user={tweet.user}/>
+                                        <Tweet classes={classes} key={tweet._id} {...tweet}/>
                                     ))
                             }
                         </Route>
@@ -110,7 +104,7 @@ export const Home: React.FC<Props> = ({}: Props): React.ReactElement => {
                             }}
                             fullWidth
                         />
-                       <Tags classes={classes}/>
+                        <Tags classes={classes}/>
                         <Paper className={classes.rightSideBlock}>
                             <Paper className={classes.rightSideBlockHeader} variant="outlined">
                                 <b>Кого читать</b>

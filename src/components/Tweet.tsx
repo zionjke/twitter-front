@@ -1,41 +1,90 @@
 import React from 'react';
 import classNames from "classnames";
-import {Avatar, Badge, IconButton, Paper, Typography} from "@material-ui/core";
+import {Avatar, Badge, IconButton, Menu, MenuItem, Paper, Typography} from "@material-ui/core";
 import CommentIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
 import RepostIcon from '@material-ui/icons/RepeatOutlined';
 import LikeIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import ShareIcon from '@material-ui/icons/ReplyOutlined';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 import {useHomeStyles} from "../pages/Home/theme";
-import { Link } from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
+import {formatDate} from '../utils/formatDate';
 
 
 type Props = {
-    id: string
+    _id: string
     classes: ReturnType<typeof useHomeStyles>
     text: string
     user: {
         fullname: string
-        userName: string
+        username: string
         avatarUrl: string
-    }
+    },
+    createdAt: string
 };
 
 
-export const Tweet: React.FC<Props> = ({classes, user, text,id}: Props): React.ReactElement => {
+export const Tweet: React.FC<Props> = ({classes, user, text, _id, createdAt}: Props): React.ReactElement => {
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const history = useHistory()
+
+    const handleClickTweet = (event: React.MouseEvent<HTMLAnchorElement>):void => {
+        event.preventDefault()
+        history.push(`/home/tweet/${_id}`)
+    }
+
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        event.stopPropagation()
+        event.preventDefault()
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
-        <Link to={`/home/tweet/${id}`} className={classes.tweetWrapper}>
+        <Link onClick={handleClickTweet} to={`/home/tweet/${_id}`} className={classes.tweetWrapper}>
             <Paper className={classNames(classes.tweet, classes.tweetsHeader)} variant="outlined">
                 <Avatar
                     className={classes.tweetAvatar}
                     alt={`Аватарка пользователя ${user.fullname}`}
                     src={user.avatarUrl}
                 />
-                <div>
-                    <Typography>
-                        <b>{user.fullname}</b>&nbsp;
-                        <span className={classes.tweetUserName}>@{user.userName}</span>&nbsp;
-                        <span className={classes.tweetUserName}>·</span>&nbsp;
-                        <span className={classes.tweetUserName}>1 ч</span>
+                <div className={classes.tweetContent}>
+                    <Typography className={classes.tweetHeader}>
+                        <div>
+                            <b>{user.fullname}</b>&nbsp;
+                            <span className={classes.tweetUserName}>@{user.username}</span>&nbsp;
+                            <span className={classes.tweetUserName}>·</span>&nbsp;
+                            <span className={classes.tweetUserName}>{formatDate(new Date(createdAt))}</span>
+                        </div>
+                        <div>
+                            <IconButton
+                                aria-label="more"
+                                aria-controls="long-menu"
+                                aria-haspopup="true"
+                                onClick={handleClick}
+                            >
+                                <MoreVertIcon/>
+                            </IconButton>
+                            <Menu
+                                id="long-menu"
+                                anchorEl={anchorEl}
+                                keepMounted
+                                open={open}
+                                onClose={handleClose}
+                            >
+
+                                <MenuItem onClick={handleClose}>
+                                    Удалить
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    Редактировать
+                                </MenuItem>
+                            </Menu>
+                        </div>
                     </Typography>
                     <Typography variant="body1" gutterBottom>
                         {text}
@@ -43,24 +92,24 @@ export const Tweet: React.FC<Props> = ({classes, user, text,id}: Props): React.R
                     <div className={classes.tweetFooter}>
                         <div>
                             <IconButton>
-                                <Badge color={"primary"} badgeContent={1} >
-                                    <CommentIcon style={{ fontSize: 20 }} />
+                                <Badge color={"primary"} badgeContent={1}>
+                                    <CommentIcon style={{fontSize: 20}}/>
                                 </Badge>
                             </IconButton>
                         </div>
                         <div>
                             <IconButton>
-                                <RepostIcon style={{ fontSize: 20 }} />
+                                <RepostIcon style={{fontSize: 20}}/>
                             </IconButton>
                         </div>
                         <div>
                             <IconButton>
-                                <LikeIcon style={{ fontSize: 20 }} />
+                                <LikeIcon style={{fontSize: 20}}/>
                             </IconButton>
                         </div>
                         <div>
                             <IconButton>
-                                <ShareIcon style={{ fontSize: 20 }} />
+                                <ShareIcon style={{fontSize: 20}}/>
                             </IconButton>
                         </div>
                     </div>
